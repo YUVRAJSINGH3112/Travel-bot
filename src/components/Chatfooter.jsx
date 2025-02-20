@@ -3,6 +3,11 @@ import { useState } from "react"
 const Chatfooter = ({setMessage}) => {
   const [input,setInput]=useState("");
 
+  const handleEnter=(e)=>{
+      if(e.key=="Enter" && input.trim()!=""){
+        sendHandle();
+  }
+}
 
   const getbotmsg = async () => {
     const options={
@@ -28,6 +33,7 @@ const Chatfooter = ({setMessage}) => {
                 className="chat-input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleEnter}
         />
     <button className="send-button" onClick={sendHandle}>Send</button>
     </div>
