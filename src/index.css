@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: cursive;
+  text-decoration: none;
 }
 #root{
   height: 100vh;
@@ -17,7 +18,31 @@
   width: 100vw;
   background-color: #111a22;
 }
-
+.logo{
+  width: 80px;
+  border-radius: 50%;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 10rem;
+  border-bottom: 1px solid #303b45;
+}
+.nav-btn a{
+  font-size: 1rem;
+    color: white !important;
+}
+.nav-btn{
+  position: relative;
+  top: -10px;
+  font-size: 1rem;
+    color: white !important;
+    background-color: transparent;
+    display: flex;
+    gap: 5rem;
+}
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +59,7 @@
   width: 100%;
   font-weight: 900;
   font-size: 1.5rem;
-  padding: 10px 24rem;
+  padding: 30px 24rem 0;
   align-self: flex-start;
   color: white !important;;
 }
