@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Chatfooter = ({setMessage}) => {
+const Chatfooter = ({message,setMessage}) => {
   const [input,setInput]=useState("");
 
   const handleEnter=(e)=>{
@@ -10,10 +10,12 @@ const Chatfooter = ({setMessage}) => {
 }
 
   const getbotmsg = async () => {
+    const history = message.map(m => `${m.role}: ${m.text}`).join("\n"); 
     const options={
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({message:input})
+      body: JSON.stringify({message:`Context:\n${history}\nUser Query: ${input}`
+})
     }
     const response = await fetch('http://localhost:3000/api',options);
     const data = await response.json();
