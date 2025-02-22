@@ -64,8 +64,9 @@
   color: white !important;;
 }
 .message {
-  font-size: 1.1rem;
-  padding: 10px 15px;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 10px 35px;
   max-width: 70%;
   border-radius: 0.65rem;
   word-wrap: break-word;

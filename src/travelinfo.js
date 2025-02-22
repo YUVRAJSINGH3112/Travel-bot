@@ -131,6 +131,11 @@ export const travelInfo = {
       email: "support@indiatravelassistant.com",
       phone: "+91-99999-88888",
       workingHours: "24/7"
-    }
+    },
+    greetings:[
+      "Hello, traveler! Kahan ka plan bana rahe ho?",
+      "Hey! Excited for your next trip? Tell me your destination!",
+      "Hi there! Let's plan an unforgettable journey for you!",
+      "Hey wanderer! Dreaming of a trip? I'm here to help!"
+    ]  
   };
-  

@@ -11,15 +11,15 @@ const Chatfooter = ({message,setMessage}) => {
 
   const getbotmsg = async () => {
     const history = message.map(m => `${m.role}: ${m.text}`).join("\n"); 
+    const prompt= input.toLowerCase().includes("hii")? `Use the greetings array of provided travel information:${history},answer this query: ${input} send any one of the random greeting of the array which best fits for the ${input}`:`Act as a Travel assistant bot and Using the provided travel information:${history},answer this query: ${input}`;
     const options={
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({message:`Context:\n${history}\nUser Query: ${input}`
+      body: JSON.stringify({message:prompt
 })
     }
     const response = await fetch('http://localhost:3000/api',options);
     const data = await response.json();
-    console.log(data)
     setMessage((prevmsg)=>[...prevmsg,{role:"bot",text:data.message}])
   }
   const sendHandle=()=>{
